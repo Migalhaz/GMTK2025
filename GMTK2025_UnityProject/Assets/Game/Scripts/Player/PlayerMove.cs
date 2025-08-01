@@ -8,6 +8,7 @@ namespace Game.Player
         [SerializeField, Min(0)] float m_moveSpeed;
         Vector2 m_moveDirection;
         [SerializeField] Rigidbody2D m_rig;
+        [SerializeField] PlayerAnimation m_playerAnimation;
 
         void Update()
         {
@@ -25,6 +26,8 @@ namespace Game.Player
             float y = Input.GetAxisRaw("Vertical");
             m_moveDirection.Set(x, y);
             m_moveDirection.Normalize();
+
+            m_playerAnimation.SetMoveDirection(m_moveDirection);
         }
 
         void Move()

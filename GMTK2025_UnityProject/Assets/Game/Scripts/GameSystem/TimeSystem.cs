@@ -8,24 +8,28 @@ namespace Game
     public class TimeSystem : MonoBehaviour
     {
         [SerializeField] FloatRange m_timeToInvoke = new FloatRange(60, 60);
-        float m_currentTime;
-        bool m_isPlaying;
+
+        public float m_StartTime { get; private set; }
+        public float m_CurrentTime { get; private set; }
+
+        public bool m_IsPlaying { get; private set; }
         [field:SerializeField] public UnityEvent m_OnTimeElapsed { get; private set; }
 
         public void SetupTimer()
         {
-            m_currentTime = m_timeToInvoke.GetRandomValue();
-            m_isPlaying = false;
+            m_StartTime = m_timeToInvoke.GetRandomValue();
+            m_CurrentTime = m_StartTime;
+            m_IsPlaying = false;
         }
 
         public void StartTimer()
         {
-            m_isPlaying = true;
+            m_IsPlaying = true;
         }
 
         public void PauseTime()
         {
-            m_isPlaying = false;
+            m_IsPlaying = false;
         }
 
         private void Update()
@@ -35,10 +39,10 @@ namespace Game
 
         void Elapse()
         {
-            if (!m_isPlaying) return;
+            if (!m_IsPlaying) return;
 
-            m_currentTime -= Time.deltaTime;
-            if (m_currentTime <= 0)
+            m_CurrentTime -= Time.deltaTime;
+            if (m_CurrentTime <= 0)
             {
                 FinishTimer();
             }
@@ -46,8 +50,8 @@ namespace Game
 
         void BreakTime()
         {
-            m_currentTime = 0;
-            m_isPlaying = false;
+            m_CurrentTime = 0;
+            m_IsPlaying = false;
         }
 
         void InvokeEvent()

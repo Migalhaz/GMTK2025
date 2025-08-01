@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8277f154084ae4b458ffda2ffabab7f5, type: 3}
+  m_Name: Beef Stirfry_RecipeData
+  m_EditorClassIdentifier: 
+  <m_name>k__BackingField: Beef Stir-fry
+  <m_description>k__BackingField: 
+  <m_Recipe>k__BackingField:
+    <m_RecipeIngredients>k__BackingField:
+    - {fileID: 11400000, guid: a323b61ef834e1842a27439a2f6f4756, type: 2}
+    - {fileID: 11400000, guid: d781f314db3d29043b90adc8922c8a1a, type: 2}
+    - {fileID: 11400000, guid: c4c08a32419e5d445be5347b76bad521, type: 2}
+    - {fileID: 11400000, guid: 99004fa6f1f7571469a8c6b54a8a24b5, type: 2}
+    - {fileID: 11400000, guid: 4574d30cb2a1853428535bf96665f76f, type: 2}
+    - {fileID: 11400000, guid: 0956973edc73874409523c537af18d34, type: 2}

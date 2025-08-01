@@ -22,7 +22,7 @@ namespace Game.Player
 
         void InputListener()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 TryInteract();
             }

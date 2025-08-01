@@ -8,11 +8,13 @@ namespace Game
     {
         [SerializeField] GameObject m_rootObject;
         [SerializeField] TMPro.TextMeshProUGUI m_recipeTitle;
-        [SerializeField] List<TMPro.TextMeshProUGUI> m_alienNames;
-
+        [SerializeField] TMPro.TextMeshProUGUI m_guestListText;
+        [SerializeField] string m_guestListBaseText = "GUEST LIST:\n";
         private void OnEnable()
         {
             RecipeTargetObserver.OnRandomizeRecipe += SetupCanvas;
+
+            SetupCanvas(RecipeTarget.Instance);
         }
 
         private void OnDisable()
@@ -22,22 +24,12 @@ namespace Game
 
         void SetupCanvas(RecipeTarget target)
         {
-            m_rootObject.gameObject.SetActive(true);
             m_recipeTitle.text = target.m_CurrentRecipe.m_name;
-            
-            int alienCount = target.m_CurrentAliensData.Count;
-            for (int i = 0; i < m_alienNames.Count; ++i)
+            m_guestListText.text = m_guestListBaseText;
+            foreach (AlienData alien in target.m_CurrentAliensData)
             {
-                bool inAlienCount = i < alienCount;
-                m_alienNames[i].gameObject.SetActive(inAlienCount);
-                if (!inAlienCount) continue;
-                m_alienNames[i].text = target.m_CurrentAliensData[i].m_name;
+                m_guestListText.text += alien.m_name + '\n';
             }
-        }
-
-        public void SwitchRootEnable()
-        {
-            m_rootObject.SetActive(!m_rootObject.activeSelf);
         }
     }
 }
