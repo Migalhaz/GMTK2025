@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <m_name>k__BackingField: Bean Bowl
   <m_description>k__BackingField: 
+  <m_RecipeImage>k__BackingField: {fileID: 207702883, guid: 2fc1b9550514c934ea1c2eb493722bf3, type: 3}
   <m_Recipe>k__BackingField:
     <m_RecipeIngredients>k__BackingField:
     - {fileID: 11400000, guid: c5544990a9fff4e4bb258699a52609db, type: 2}

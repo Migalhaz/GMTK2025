@@ -14,6 +14,16 @@ namespace Game
 
         public bool m_IsPlaying { get; private set; }
         [field:SerializeField] public UnityEvent m_OnTimeElapsed { get; private set; }
+        [SerializeField] bool m_onAwake;
+
+        private void Start()
+        {
+            if (m_onAwake)
+            {
+                SetupTimer();
+                StartTimer();
+            }
+        }
 
         public void SetupTimer()
         {

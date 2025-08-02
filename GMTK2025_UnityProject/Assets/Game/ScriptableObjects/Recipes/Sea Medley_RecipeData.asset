@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <m_name>k__BackingField: Sea Medley
   <m_description>k__BackingField: 
+  <m_RecipeImage>k__BackingField: {fileID: 2115686394, guid: 2fc1b9550514c934ea1c2eb493722bf3, type: 3}
   <m_Recipe>k__BackingField:
     <m_RecipeIngredients>k__BackingField:
     - {fileID: 11400000, guid: dd21beaecce58e549822e8ad9947d508, type: 2}

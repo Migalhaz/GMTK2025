@@ -17,3 +17,6 @@ MonoBehaviour:
   <m_Restrictions>k__BackingField:
   - <m_Item>k__BackingField: {fileID: 11400000, guid: 4574d30cb2a1853428535bf96665f76f, type: 2}
     <m_Replace>k__BackingField: {fileID: 11400000, guid: 58c858e8b480e544dbb9d2cbacc2b62d, type: 2}
+  <m_HeadSprite>k__BackingField: {fileID: -1892949316, guid: f39707c896a7eae488d9afc67e88caf4, type: 3}
+  <m_BodySprite>k__BackingField: {fileID: -1171372383, guid: 4dc2d36d4559d5843b34816d1606a895, type: 3}
+  <m_SkinColor>k__BackingField: {r: 0.32070106, g: 0.5943396, b: 0.30558026, a: 1}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <m_name>k__BackingField: Sea Pasta
   <m_description>k__BackingField: 
+  <m_RecipeImage>k__BackingField: {fileID: -574748262, guid: 2fc1b9550514c934ea1c2eb493722bf3, type: 3}
   <m_Recipe>k__BackingField:
     <m_RecipeIngredients>k__BackingField:
     - {fileID: 11400000, guid: e575e1a9d56088048b794e255e62cfae, type: 2}

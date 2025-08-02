@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <m_name>k__BackingField: Shrimp Toast
   <m_description>k__BackingField: 
+  <m_RecipeImage>k__BackingField: {fileID: -1957504232, guid: 2fc1b9550514c934ea1c2eb493722bf3, type: 3}
   <m_Recipe>k__BackingField:
     <m_RecipeIngredients>k__BackingField:
     - {fileID: 11400000, guid: 4140f863e5e7d6448b5bc20677b1b914, type: 2}

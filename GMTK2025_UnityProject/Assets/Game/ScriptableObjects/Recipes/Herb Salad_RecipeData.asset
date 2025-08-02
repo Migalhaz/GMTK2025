@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <m_name>k__BackingField: Herb Salad
   <m_description>k__BackingField: 
+  <m_RecipeImage>k__BackingField: {fileID: -1227562397, guid: 2fc1b9550514c934ea1c2eb493722bf3, type: 3}
   <m_Recipe>k__BackingField:
     <m_RecipeIngredients>k__BackingField:
     - {fileID: 11400000, guid: 92bf6e560cc277049927a939241347dd, type: 2}

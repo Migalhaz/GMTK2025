@@ -9,6 +9,11 @@ namespace Game
     {
         [field: SerializeField] public List<Restriction> m_Restrictions { get; private set; }
 
+        [field: Header("Visual")]
+        [field: SerializeField] public Sprite m_HeadSprite { get; private set; }
+        [field: SerializeField] public Sprite m_BodySprite { get; private set; }
+        [field: SerializeField] public Color m_SkinColor { get; private set; } = Color.white;
+
         public bool AllowItem(ItemData item)
         {
             foreach (Restriction restriction in m_Restrictions)

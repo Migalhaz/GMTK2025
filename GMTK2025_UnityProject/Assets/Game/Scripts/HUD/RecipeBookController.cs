@@ -1,3 +1,4 @@
+using MigalhaSystem.Extensions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ namespace Game
     public class RecipeBookController : MonoBehaviour
     {
         [SerializeField] TMPro.TextMeshProUGUI m_recipeTitle;
+        [SerializeField] UnityEngine.UI.Image m_recipeImage;
         [SerializeField] TMPro.TextMeshProUGUI m_ingredientsText;
         [SerializeField] string m_ingredientsBaseText = "INGREDIENTS:\n";
 
@@ -39,6 +41,7 @@ namespace Game
             List<ItemData> currentIngredients = currentRecipe.m_Recipe.m_RecipeIngredients;
             
             m_recipeTitle.text = currentRecipe.m_name;
+            m_recipeImage.sprite = currentRecipe.m_RecipeImage;
             m_ingredientsText.text = m_ingredientsBaseText;
             foreach (ItemData ingredient in currentIngredients)
             {
