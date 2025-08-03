@@ -15,6 +15,7 @@ namespace Game
                 return;
             }
 
+            m_audioManager.PlayClickSound();
             m_inventoryManager.m_PlayerItems.RemoveAt(m_cellIndex);
             OnPointerMove(eventData);
         }

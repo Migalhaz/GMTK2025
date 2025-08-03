@@ -14,7 +14,8 @@ namespace Game
 
         [SerializeField, Min(0)] float m_minAlienPatienceTime;
         [SerializeField, Min(0)] float m_maxAlienPatienceTime;
-        float m_alienPatienceTime;
+        public float m_alienStartPatienceTime { get; private set; }
+        public float m_alienPatienceTime { get; private set; }
 
         RecipeTarget target => RecipeTarget.Instance;
         private void OnEnable()
@@ -35,6 +36,7 @@ namespace Game
                 AlienLogicObserver.AlienPatienceElapsed();
                 gameObject.SetActive(false);
             }
+            m_visual.UpdateFill(m_alienPatienceTime/m_alienStartPatienceTime);
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -69,7 +71,8 @@ namespace Game
 
             m_alienData = target.m_CurrentAliensData.GetRandom();
 
-            m_alienPatienceTime = Random.Range(m_minAlienPatienceTime, m_maxAlienPatienceTime);
+            m_alienStartPatienceTime = Random.Range(m_minAlienPatienceTime, m_maxAlienPatienceTime);
+            m_alienPatienceTime = m_alienStartPatienceTime;
             m_visual.SetVisual(m_alienData);
         }
     }

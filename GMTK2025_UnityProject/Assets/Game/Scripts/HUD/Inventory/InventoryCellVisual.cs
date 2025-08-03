@@ -10,6 +10,7 @@ namespace Game
         [SerializeField, Min(0)] protected int m_cellIndex;
         [SerializeField] UnityEngine.UI.Image m_foregroundItemImage;
         protected PlayerInventoryManager m_inventoryManager => PlayerInventoryManager.Instance;
+        protected AudioManager m_audioManager => AudioManager.Instance;
 
         protected virtual void OnEnable()
         {

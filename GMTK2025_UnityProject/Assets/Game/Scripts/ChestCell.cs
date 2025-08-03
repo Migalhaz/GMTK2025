@@ -9,12 +9,13 @@ namespace Game
     {
         [SerializeField] ItemData m_itemData;
         [SerializeField] UnityEngine.UI.Image m_foregroundImage;
-
+        AudioManager m_audioManager => AudioManager.Instance;
         public void OnPointerDown(PointerEventData eventData)
         {
             if (!m_itemData) return;
             Player.PlayerInventoryManager.Instance.AddItem(m_itemData);
-            
+            m_audioManager?.PlayClickSound();
+
         }
 
         public void OnPointerExit(PointerEventData eventData)

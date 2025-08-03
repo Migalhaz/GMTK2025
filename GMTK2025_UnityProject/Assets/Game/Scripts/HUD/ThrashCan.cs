@@ -8,20 +8,27 @@ namespace Game
     public class ThrashCan : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] Animator m_animator;
-
+        [SerializeField] AudioSource m_audioSource;
         bool m_hoover;
+        bool m_hasRecipe => PlayerHandObserver.GetRecipeInHand() != null;
 
+        private void Awake()
+        {
+            m_animator ??= GetComponent<Animator>();
+            m_audioSource ??= GetComponent<AudioSource>();
+        }
 
         private void Update()
         {
-            bool hasRecipe = PlayerHandObserver.GetRecipeInHand() != null;
-            bool playAnimation = m_hoover && hasRecipe;
+            bool playAnimation = m_hoover && m_hasRecipe;
             m_animator.SetBool("isOpened", playAnimation);
         }
 
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!m_hasRecipe) return;
+            m_audioSource.Play();
             PlayerHandObserver.RequestSetRecipeInHand(null);
         }
 

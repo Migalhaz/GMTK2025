@@ -19,6 +19,12 @@ namespace Game
         [SerializeField] PamState m_currentState;
         public PamState m_CurrentPamState => m_currentState;
         [SerializeField, Min(-1)] int m_maxItemCount;
+        AudioSource m_audioSource;
+
+        private void Awake()
+        {
+            m_audioSource = GetComponent<AudioSource>();
+        }
 
         private void Update()
         {
@@ -47,6 +53,7 @@ namespace Game
             if (!itemInHand) return;
             if (m_maxItemCount == -1)
             {
+                m_audioSource.Play();
                 m_itensInPan.Add(itemInHand);
                 return;
             }
@@ -55,6 +62,7 @@ namespace Game
             {
                 return;
             }
+            m_audioSource.Play();
             m_itensInPan.Add(itemInHand);
 
         }
@@ -73,6 +81,7 @@ namespace Game
         {
             if (m_currentState != PamState.Empty) return;
             if (m_itensInPan == null || m_itensInPan.Count <= 0) return;
+            m_audioSource.Play();
             m_currentTime = m_timeToCook;
             m_currentState = PamState.Cooking;
         }

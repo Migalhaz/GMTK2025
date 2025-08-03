@@ -7,9 +7,13 @@ namespace Game
     public class CanvasController : MonoBehaviour
     {
         [SerializeField] List<Canvas> m_allCanvas = new List<Canvas>();
-
+        [SerializeField] Canvas m_pauseCanvas;
         private void Awake()
         {
+            if (!m_allCanvas.Contains(m_pauseCanvas))
+            {
+                m_allCanvas.Add(m_pauseCanvas);
+            }
             DisableAllCanvas();
         }
 
@@ -17,7 +21,8 @@ namespace Game
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                DisableAllCanvas();
+
+                SwitchCanvas(m_pauseCanvas);
             }
         }
 

@@ -16,12 +16,12 @@ namespace Game
         [SerializeField] int m_maxRestrictionCount;
 
         [Header("Visuals")]
-        [SerializeField] List<Color> m_colorList;
-        [SerializeField] List<Sprite> m_headSprites;
-        [SerializeField] List<Sprite> m_bodySprites;
-        [SerializeField] List<Sprite> m_eyeSprites;
-        [SerializeField] List<Sprite> m_mouthSprites;
-        [SerializeField] List<Sprite> m_headAddonSprites;
+        [SerializeField] List<ColorByLabel> m_colorList;
+        [SerializeField] List<SpriteByLabel> m_headSprites;
+        [SerializeField] List<SpriteByLabel> m_bodySprites;
+        [SerializeField] List<SpriteByLabel> m_eyeSprites;
+        [SerializeField] List<SpriteByLabel> m_mouthSprites;
+        [SerializeField] List<SpriteByLabel> m_headAddonSprites;
 
 
         [ContextMenu("Randomize")]
@@ -35,7 +35,7 @@ namespace Game
 
         void RandomizeAlien(AlienData alien)
         {
-            RandomizeRestrictions(alien);
+            //RandomizeRestrictions(alien);
             RandomizeVisual(alien);
         }
 
@@ -61,12 +61,48 @@ namespace Game
 
         void RandomizeVisual(AlienData alien)
         {
-            alien.m_BodySprite = m_bodySprites.GetRandom();
-            alien.m_HeadSprite = m_headSprites.GetRandom();
-            alien.m_MouthSprite = m_mouthSprites.GetRandom();
-            alien.m_EyeSprite = m_eyeSprites.GetRandom();
-            alien.m_HeadAddonSprite = m_headAddonSprites.GetRandom();
-            alien.m_SkinColor = m_colorList.GetRandom();
+            SpriteByLabel body = m_bodySprites.GetRandom();
+            alien.m_BodySprite = body.sprite;
+            alien.m_description += $"{body.label}, ";
+            
+            SpriteByLabel head = m_headSprites.GetRandom();
+            alien.m_HeadSprite = head.sprite;
+            alien.m_description += $"{head.label}, ";
+
+            SpriteByLabel mouth = m_mouthSprites.GetRandom();
+            alien.m_MouthSprite = mouth.sprite;
+            alien.m_description += $"{mouth.label}, ";
+
+            SpriteByLabel eyes = m_eyeSprites.GetRandom();
+            alien.m_EyeSprite = eyes.sprite;
+            alien.m_description += $"{eyes.label}, ";
+
+            SpriteByLabel headAddon = m_headAddonSprites.GetRandom();
+            alien.m_HeadAddonSprite = headAddon.sprite;
+            if (headAddon.sprite != null)
+            {
+                alien.m_description += $"{headAddon.label}, ";
+            }
+
+            ColorByLabel color = m_colorList.GetRandom();
+
+            alien.m_SkinColor = color.color;
+            alien.m_description += $"{color.label} skin color.";
         }
+
+    }
+
+    [System.Serializable]
+    public class SpriteByLabel
+    {
+        public Sprite sprite;
+        public string label;
+    }
+
+    [System.Serializable]
+    public class ColorByLabel
+    {
+        public Color color;
+        public string label;
     }
 }

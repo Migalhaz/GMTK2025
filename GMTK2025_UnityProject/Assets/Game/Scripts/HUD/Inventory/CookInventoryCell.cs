@@ -36,6 +36,7 @@ namespace Game
             {
                 return;
             }
+            m_audioManager.PlayClickSound();
             PlayerHandObserver.RequestSetItemInHand(m_inventoryManager.m_PlayerItems[m_cellIndex]);
             OnPointerMove(eventData);
         }

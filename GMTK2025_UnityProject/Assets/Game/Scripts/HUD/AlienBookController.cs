@@ -54,6 +54,14 @@ namespace Game
                 m_restrictionCell[i].SetupRestrictionCell(currentRestriction);
             }
         }
+
+
+        [ContextMenu("Sort list")]
+        public void SortByAlphabetOrder()
+        {
+            
+            m_allAliensData.Sort((x, y) => x.m_name.CompareTo(y.m_name));
+        }
     }
 
     [System.Serializable]

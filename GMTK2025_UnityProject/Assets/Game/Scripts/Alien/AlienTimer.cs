@@ -12,6 +12,7 @@ namespace Game
         float m_currentTime;
 
         [SerializeField] List<AlienLogic> m_alienLogics;
+        [SerializeField] AlienAudio m_audio;
 
 
         private void Update()
@@ -32,6 +33,7 @@ namespace Game
                 return;
             }
 
+            m_audio.PlayerRandomSound();
             alienLogic.gameObject.SetActive(true);
         }
 

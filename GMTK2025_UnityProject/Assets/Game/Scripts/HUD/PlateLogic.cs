@@ -14,12 +14,14 @@ namespace Game
 
         [SerializeField] GameObject m_textBackground;
         [SerializeField] TMPro.TextMeshProUGUI m_ingredientsText;
+        [SerializeField] AudioSource m_audioSource;
 
         bool m_showIngredients = false;
 
         private void Awake()
         {
             m_showIngredients = false;
+            m_audioSource ??= GetComponent<AudioSource>();
         }
 
         public void OnPointerEnter(PointerEventData eventData) => OnPointerMove(eventData);
@@ -71,6 +73,7 @@ namespace Game
         public bool TrySetRecipe(Recipe recipe)
         {
             if (HasRecipe()) return false;
+            m_audioSource.Play();
             m_currentRecipe = recipe;
             return true;
         }

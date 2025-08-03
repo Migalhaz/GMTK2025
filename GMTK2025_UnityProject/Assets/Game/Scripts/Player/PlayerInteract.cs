@@ -9,10 +9,12 @@ namespace Game.Player
         [SerializeField, Min(0)] float m_interactAreaRadius = 1;
         [SerializeField] LayerMask m_interactLayer;
         Collider2D m_collider;
+        [SerializeField] Canvas m_canvas;
 
         private void Update()
         {
             InputListener();
+            UpdateVisual();
         }
 
         private void FixedUpdate()
@@ -26,6 +28,20 @@ namespace Game.Player
             {
                 TryInteract();
             }
+        }
+
+        void UpdateVisual()
+        {
+            if (m_collider != null)
+            {
+                m_canvas.gameObject.SetActive(true);
+                m_canvas.transform.position = m_collider.transform.position;
+            }
+            else
+            {
+                m_canvas.gameObject.SetActive(false);
+            }
+
         }
 
         void TryInteract()

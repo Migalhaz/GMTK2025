@@ -14,6 +14,10 @@ namespace Game
         [SerializeField] UnityEngine.UI.Image m_mouthImage;
         [SerializeField] UnityEngine.UI.Image m_headAddon;
         [SerializeField] UnityEngine.UI.Image m_accessory;
+        [SerializeField] UnityEngine.UI.Image m_fillBar;
+        [SerializeField] Color m_startValue = Color.green;
+        [SerializeField] Color m_endValue = Color.red;
+
 
         [SerializeField] List<Sprite> m_accessoriesSprites;
         [SerializeField, Range(0, 100)] float m_accessoryChance = 50; 
@@ -47,5 +51,11 @@ namespace Game
         }
 
         bool UseAccessory() => Random.value * 100 < m_accessoryChance;
+
+        public void UpdateFill(float fillAmount)
+        {
+            m_fillBar.color = Color.Lerp(m_startValue, m_endValue, fillAmount);
+            m_fillBar.fillAmount = fillAmount;
+        }
     }
 }

@@ -10,14 +10,15 @@ namespace Game
         [SerializeField] string m_showText;
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (ItemNameShower.Instance == null) return;
             ItemNameShower.Instance?.EnableRoot(false);
         }
 
         public void OnPointerMove(PointerEventData eventData)
         {
-
+            if (ItemNameShower.Instance == null) return;
             ItemNameShower.Instance?.EnableRoot(true);
-            ItemNameShower.Instance.ShowItemName(m_showText, eventData.position);
+            ItemNameShower.Instance?.ShowItemName(m_showText, eventData.position);
         }
     }
 }
