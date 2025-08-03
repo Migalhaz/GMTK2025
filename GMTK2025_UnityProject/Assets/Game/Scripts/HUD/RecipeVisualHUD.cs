@@ -25,6 +25,14 @@ namespace Game
 
         void SetupCanvas(RecipeTarget target)
         {
+            if (target == null)
+            {
+                target = RecipeTarget.Instance;
+                if (target == null)
+                {
+                    return;
+                }
+            }
             m_recipeTitle.text = target.m_CurrentRecipe.m_name;
             m_recipeImage.sprite = target.m_CurrentRecipe.m_RecipeImage;
 

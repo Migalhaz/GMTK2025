@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8480b5f0726b5f44a6419593b8a6210, type: 3}
+  m_Name: Zephyrite
+  m_EditorClassIdentifier: 
+  <m_name>k__BackingField: Zephyrite
+  <m_description>k__BackingField: 
+  <m_Restrictions>k__BackingField:
+  - m_Item: {fileID: 11400000, guid: 88cbb5bda5cf3e64199e3c342cae842d, type: 2}
+    m_Replace: {fileID: 11400000, guid: 58c858e8b480e544dbb9d2cbacc2b62d, type: 2}
+  - m_Item: {fileID: 11400000, guid: 0956973edc73874409523c537af18d34, type: 2}
+    m_Replace: {fileID: 11400000, guid: b0f50a03030746c40987fb4caa828e34, type: 2}
+  - m_Item: {fileID: 11400000, guid: 46cabad806b1ce34c92bdd6a6a223710, type: 2}
+    m_Replace: {fileID: 11400000, guid: 59515f92da457b448b4f88ed742be9bd, type: 2}
+  - m_Item: {fileID: 11400000, guid: c5544990a9fff4e4bb258699a52609db, type: 2}
+    m_Replace: {fileID: 11400000, guid: 4140f863e5e7d6448b5bc20677b1b914, type: 2}
+  - m_Item: {fileID: 11400000, guid: e575e1a9d56088048b794e255e62cfae, type: 2}
+    m_Replace: {fileID: 11400000, guid: fb25f48338bece14fb34236e9d223036, type: 2}
+  m_HeadSprite: {fileID: -1892949316, guid: f39707c896a7eae488d9afc67e88caf4, type: 3}
+  m_BodySprite: {fileID: 344837129, guid: 4dc2d36d4559d5843b34816d1606a895, type: 3}
+  m_SkinColor: {r: 1, g: 0, b: 0, a: 1}
+  m_EyeSprite: {fileID: 1892547593, guid: f894a7c3b89d5d848b3c5f743cf1997f, type: 3}
+  m_MouthSprite: {fileID: 403915804, guid: ee2eef1ea5c9695439b7f0beebd09882, type: 3}
+  m_HeadAddonSprite: {fileID: -34221061, guid: a6a5ab318b6656e459693679dcdc9ae1, type: 3}

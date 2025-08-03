@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8480b5f0726b5f44a6419593b8a6210, type: 3}
+  m_Name: Pyron
+  m_EditorClassIdentifier: 
+  <m_name>k__BackingField: Pyron
+  <m_description>k__BackingField: 
+  <m_Restrictions>k__BackingField:
+  - m_Item: {fileID: 11400000, guid: fb25f48338bece14fb34236e9d223036, type: 2}
+    m_Replace: {fileID: 11400000, guid: 46cabad806b1ce34c92bdd6a6a223710, type: 2}
+  - m_Item: {fileID: 11400000, guid: b0f50a03030746c40987fb4caa828e34, type: 2}
+    m_Replace: {fileID: 11400000, guid: 58c858e8b480e544dbb9d2cbacc2b62d, type: 2}
+  - m_Item: {fileID: 11400000, guid: 4b8cf21c6b9c24e4f9ff668a8a1f5b12, type: 2}
+    m_Replace: {fileID: 11400000, guid: dd21beaecce58e549822e8ad9947d508, type: 2}
+  - m_Item: {fileID: 11400000, guid: a323b61ef834e1842a27439a2f6f4756, type: 2}
+    m_Replace: {fileID: 11400000, guid: c5544990a9fff4e4bb258699a52609db, type: 2}
+  m_HeadSprite: {fileID: -320646940, guid: f39707c896a7eae488d9afc67e88caf4, type: 3}
+  m_BodySprite: {fileID: 344837129, guid: 4dc2d36d4559d5843b34816d1606a895, type: 3}
+  m_SkinColor: {r: 0.07843137, g: 0.6039216, b: 0.09305532, a: 1}
+  m_EyeSprite: {fileID: -1286751454, guid: f894a7c3b89d5d848b3c5f743cf1997f, type: 3}
+  m_MouthSprite: {fileID: -712480479, guid: ee2eef1ea5c9695439b7f0beebd09882, type: 3}
+  m_HeadAddonSprite: {fileID: -34221061, guid: a6a5ab318b6656e459693679dcdc9ae1, type: 3}

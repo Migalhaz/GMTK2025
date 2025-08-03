@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
@@ -8,9 +6,11 @@ namespace Game
     {
         [SerializeField] Recipe m_recipeInHand;
         [SerializeField] ItemData m_ItemInHand;
-
+        [SerializeField] Texture2D m_cursor;
+        Vector2 m_midVector;
         private void OnEnable()
         {
+            m_midVector = new Vector2(0.5f, 0.5f);
             PlayerHandObserver.OnRequestSetRecipeInHand += SetRecipe;
             PlayerHandObserver.OnRequestSetItemInHand += SetItem;
 
@@ -25,7 +25,28 @@ namespace Game
 
             PlayerHandObserver.OnGetItemInHand -= GetItem;
             PlayerHandObserver.OnGetRecipeInHand -= GetRecipe;
+
+            Cursor.SetCursor(null, m_midVector, CursorMode.Auto);
         }
+
+        private void Awake()
+        {
+            m_recipeInHand = null;
+            m_ItemInHand = null;
+        }
+
+        private void Update()
+        {
+            if (m_recipeInHand != null)
+            {
+                Cursor.SetCursor(m_cursor, m_midVector, CursorMode.Auto);
+            }
+            else
+            {
+                Cursor.SetCursor(null, m_midVector, CursorMode.Auto);
+            }
+        }
+
 
         public void SetRecipe(Recipe recipeData) => m_recipeInHand = recipeData;
         public void SetItem(ItemData itemData) => m_ItemInHand = itemData;

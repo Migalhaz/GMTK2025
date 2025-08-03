@@ -69,7 +69,7 @@ namespace Game
             m_OnTimeElapsed?.Invoke();
         }
 
-        void FinishTimer()
+        public void FinishTimer()
         {
             BreakTime();
             InvokeEvent();

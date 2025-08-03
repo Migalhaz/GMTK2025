@@ -9,9 +9,8 @@ namespace Game
     public class AlienLogic : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] AlienData m_alienData;
-        [SerializeField] UnityEngine.UI.Image m_headImage;
-        [SerializeField] UnityEngine.UI.Image m_bodyImage;
         [SerializeField] RecipeTaker m_recipeTaker;
+        [SerializeField] AlienVisual m_visual;
 
         [SerializeField, Min(0)] float m_minAlienPatienceTime;
         [SerializeField, Min(0)] float m_maxAlienPatienceTime;
@@ -60,7 +59,7 @@ namespace Game
                 Debug.Log("RECIPE REJECTED");
                 AlienLogicObserver.RejectRecipe();
             }
-
+            gameObject.SetActive(false);
         }
 
         public void RandomizeAlien()
@@ -71,16 +70,7 @@ namespace Game
             m_alienData = target.m_CurrentAliensData.GetRandom();
 
             m_alienPatienceTime = Random.Range(m_minAlienPatienceTime, m_maxAlienPatienceTime);
-            UpdateVisual();
-        }
-
-        void UpdateVisual()
-        {
-            m_headImage.sprite = m_alienData.m_HeadSprite;
-            m_bodyImage.sprite = m_alienData.m_BodySprite;
-
-            m_headImage.color = m_alienData.m_SkinColor;
-            m_bodyImage.color = m_alienData.m_SkinColor;
+            m_visual.SetVisual(m_alienData);
         }
     }
 

@@ -7,12 +7,15 @@ namespace Game
     [CreateAssetMenu(fileName = "New Alien Data", menuName = "Data/Alien")]
     public class AlienData : InfoData
     {
-        [field: SerializeField] public List<Restriction> m_Restrictions { get; private set; }
+        [field: SerializeField] public List<Restriction> m_Restrictions { get; private set; } = new();
 
-        [field: Header("Visual")]
-        [field: SerializeField] public Sprite m_HeadSprite { get; private set; }
-        [field: SerializeField] public Sprite m_BodySprite { get; private set; }
-        [field: SerializeField] public Color m_SkinColor { get; private set; } = Color.white;
+        [Header("Visual")]
+        [SerializeField] public Sprite m_HeadSprite;
+        [SerializeField] public Sprite m_BodySprite;
+        [SerializeField] public Color m_SkinColor = Color.white;
+        [SerializeField] public Sprite m_EyeSprite;
+        [SerializeField] public Sprite m_MouthSprite;
+        [SerializeField] public Sprite m_HeadAddonSprite;
 
         public bool AllowItem(ItemData item)
         {
@@ -38,7 +41,7 @@ namespace Game
     [System.Serializable]
     public class Restriction
     {
-        [field: SerializeField] public ItemData m_Item { get; private set; }
-        [field: SerializeField] public ItemData m_Replace { get; private set; }
+        [SerializeField] public ItemData m_Item = null;
+        [SerializeField] public ItemData m_Replace = null;
     }
 }
