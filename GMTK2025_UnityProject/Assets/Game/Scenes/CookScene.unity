@@ -4949,6 +4949,7 @@ GameObject:
   - component: {fileID: 901715773}
   - component: {fileID: 901715772}
   - component: {fileID: 901715771}
+  - component: {fileID: 901715774}
   m_Layer: 5
   m_Name: BTN_SoveButton
   m_TagString: Untagged
@@ -5069,6 +5070,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901715769}
   m_CullTransparentMesh: 1
+--- !u!114 &901715774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901715769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a082ea0dddedb44884a37bab4df3915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_panLogic: {fileID: 252531238}
+  m_animationDuration: 0.3
+  m_finalScale: {x: 1.1, y: 1.1, z: 1.1}
 --- !u!1 &908770712
 GameObject:
   m_ObjectHideFlags: 0
@@ -9340,6 +9356,7 @@ GameObject:
   - component: {fileID: 2048558459}
   - component: {fileID: 2048558458}
   - component: {fileID: 2048558457}
+  - component: {fileID: 2048558460}
   m_Layer: 5
   m_Name: BTN_SoveButton
   m_TagString: Untagged
@@ -9460,6 +9477,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048558455}
   m_CullTransparentMesh: 1
+--- !u!114 &2048558460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048558455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a082ea0dddedb44884a37bab4df3915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_panLogic: {fileID: 107401431}
+  m_animationDuration: 0.3
+  m_finalScale: {x: 1.1, y: 1.1, z: 1.1}
 --- !u!1 &2067958370
 GameObject:
   m_ObjectHideFlags: 0

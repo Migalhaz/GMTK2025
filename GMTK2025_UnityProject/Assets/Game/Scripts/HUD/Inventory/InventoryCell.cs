@@ -36,5 +36,10 @@ namespace Game
             ItemNameShower.Instance?.EnableRoot(true);
             ItemNameShower.Instance.ShowItemName(m_inventoryManager.m_PlayerItems[m_cellIndex].m_name, eventData.position);
         }
+
+        private void OnDisable()
+        {
+            ItemNameShower.Instance?.EnableRoot(false);
+        }
     }
 }

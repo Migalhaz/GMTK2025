@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Game.Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +18,9 @@ namespace Game
         [SerializeField] AudioSource m_audioSource;
 
         bool m_showIngredients = false;
-
+        Tween m_currentTween;
+        [SerializeField] Vector3 m_finalScale = new Vector3(1.1f, 1.1f, 1.1f);
+        [SerializeField] float m_animationDuration = 0.3f;
         private void Awake()
         {
             m_showIngredients = false;
@@ -97,6 +100,16 @@ namespace Game
             Sprite currentSprite = HasRecipe()? recipeData.m_RecipeImage : m_plateSprite;
             m_plateVisual.sprite = currentSprite;
 
+            if (HasRecipe())
+            {
+                m_currentTween ??= transform.DOScale(m_finalScale, m_animationDuration).SetLoops(-1, LoopType.Yoyo);
+            }
+            else
+            {
+                m_currentTween?.Kill();
+                m_currentTween = null;
+                transform.localScale = Vector3.one;
+            }
         }
     }
 }

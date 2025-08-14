@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,11 @@ namespace Game
 
         [SerializeField] GameObject m_textBackground;
         [SerializeField] TMPro.TextMeshProUGUI m_ingredientsText;
+
+        [SerializeField] float m_animationDuration = .3f;
+        [SerializeField] Vector3 m_endScale = new Vector3(1.1f, 1.1f, 1.1f);
+        Tween m_currentTween;
+
 
         bool m_showIngredients;
 
@@ -55,6 +61,17 @@ namespace Game
         {
             ShowIngredients();
             UpdateVisual();
+
+            if (m_panLogic.m_CurrentPamState != PamState.Done)
+            {
+                m_currentTween?.Kill();
+                m_currentTween = null;
+                transform.localScale = Vector3.one;
+            }
+            else
+            {
+                m_currentTween ??= transform.DOScale(m_endScale, m_animationDuration).SetLoops(-1, LoopType.Yoyo);
+            }
         }
 
         void UpdateVisual()

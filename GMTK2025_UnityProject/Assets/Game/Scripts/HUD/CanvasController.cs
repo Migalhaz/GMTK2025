@@ -8,21 +8,64 @@ namespace Game
     {
         [SerializeField] List<Canvas> m_allCanvas = new List<Canvas>();
         [SerializeField] Canvas m_pauseCanvas;
+        [SerializeField] Canvas m_recipeCanvas;
+        [SerializeField] bool m_showRecipeOnStart = false;
         private void Awake()
         {
             if (!m_allCanvas.Contains(m_pauseCanvas))
             {
                 m_allCanvas.Add(m_pauseCanvas);
             }
+            //DisableAllCanvas();
+        }
+
+        private void Start()
+        {
             DisableAllCanvas();
+            if (m_showRecipeOnStart)
+            {
+                EnableCanvas(m_recipeCanvas);
+            }
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
+            InputListener();
+        }
 
-                SwitchCanvas(m_pauseCanvas);
+        void InputListener()
+        {
+            if (!Input.GetKeyDown(KeyCode.Escape))
+            {
+                return;
+            }
+            if (m_pauseCanvas.gameObject.activeSelf)
+            {
+                Time.timeScale = 1.0f;
+                DisableAllCanvas();
+            }
+            else
+            {
+                bool m_allDisable = true;
+                foreach (Canvas cv in m_allCanvas)
+                {
+                    if (cv == m_pauseCanvas || !cv.gameObject.activeSelf)
+                    {
+                        continue;
+                    }
+                    m_allDisable = false;
+                }
+
+                if (m_allDisable)
+                {
+                    EnableCanvas(m_pauseCanvas);
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    DisableAllCanvas();
+
+                }
             }
         }
 
